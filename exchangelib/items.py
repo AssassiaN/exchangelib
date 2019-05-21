@@ -1152,6 +1152,9 @@ class MeetingResponse(BaseMeetingItem):
     FIELDS = Message.FIELDS + [
         MailboxField('received_by', field_uri='message:ReceivedBy', is_read_only=True),
         MailboxField('received_representing', field_uri='message:ReceivedRepresenting', is_read_only=True),
+        DateTimeField('proposed_start', field_uri='meeting:ProposedStart', supported_from=EXCHANGE_2013,
+                      is_read_only=True),
+        DateTimeField('proposed_end', field_uri='meeting:ProposedEnd', supported_from=EXCHANGE_2013, is_read_only=True),
     ]
 
 
