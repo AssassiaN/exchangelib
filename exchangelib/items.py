@@ -1155,6 +1155,8 @@ class MeetingResponse(BaseMeetingItem):
         DateTimeField('proposed_start', field_uri='meeting:ProposedStart', supported_from=EXCHANGE_2013,
                       is_read_only=True),
         DateTimeField('proposed_end', field_uri='meeting:ProposedEnd', supported_from=EXCHANGE_2013, is_read_only=True),
+        AssociatedCalendarItemIdField('associated_calendar_item_id', field_uri='meeting:AssociatedCalendarItemId',
+                                      value_cls=AssociatedCalendarItemId),
     ]
 
 
