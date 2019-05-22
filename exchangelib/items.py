@@ -1157,6 +1157,10 @@ class MeetingResponse(BaseMeetingItem):
         DateTimeField('proposed_end', field_uri='meeting:ProposedEnd', supported_from=EXCHANGE_2013, is_read_only=True),
         AssociatedCalendarItemIdField('associated_calendar_item_id', field_uri='meeting:AssociatedCalendarItemId',
                                       value_cls=AssociatedCalendarItemId),
+        ChoiceField('response_type', field_uri='meeting:ResponseType',
+                    choices={Choice('Unknown'), Choice('Organizer'), Choice('Tentative'),
+                             Choice('Accept'), Choice('Decline'), Choice('NoResponseReceived')},
+                    is_required=True, default='Unknown'),
     ]
 
 
